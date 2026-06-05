@@ -1,0 +1,246 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   Aura Design — Design tokens (Tailwind v4 @theme)
+   Warm & Organic: clay · sage · honey gold · warm charcoal
+   ============================================================ */
+@theme {
+  /* Typography */
+  --font-display: 'Literata', Georgia, 'Times New Roman', serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+
+  /* Surfaces (warm cream / parchment) */
+  --color-cream: #fff8f3;
+  --color-cream-2: #fbf2e8;
+  --color-cream-3: #f6ece3;
+  --color-sand: #eae1d7;
+  --color-sand-deep: #d9c1bc;
+
+  /* Brand seeds */
+  --color-clay: #cc7a67; /* primary — terracotta */
+  --color-clay-soft: #d98b78;
+  --color-clay-deep: #a8533f;
+  --color-sage: #8da399; /* secondary */
+  --color-sage-soft: #a7bbb1;
+  --color-sage-deep: #5e7568;
+  --color-gold: #e9c46a; /* tertiary — honey */
+  --color-gold-soft: #f0d590;
+  --color-gold-deep: #c99a2e;
+
+  /* Ink / text (warm charcoal-brown, never pure black) */
+  --color-ink: #221d18; /* dark section base */
+  --color-ink-2: #17130f;
+  --color-coal: #4a453e; /* neutral */
+  --color-text: #1f1b15;
+  --color-text-soft: #54433f;
+  --color-text-mute: #86736e;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-cream);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  ::selection {
+    background: var(--color-clay);
+    color: #fff8f3;
+  }
+
+  /* Thin warm scrollbar (non-Lenis fallback) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-2);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-sand-deep);
+    border-radius: 9999px;
+    border: 2px solid var(--color-cream-2);
+  }
+}
+
+/* ============================================================
+   Lenis smooth-scroll
+   ============================================================ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Liquid glass — chrome over imagery / video
+   ============================================================ */
+.glass {
+  background: rgba(255, 248, 243, 0.5);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 10px 40px -12px rgba(74, 69, 62, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(28, 23, 18, 0.42);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 12px 44px -14px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* ============================================================
+   Warm text gradient
+   ============================================================ */
+.text-gradient {
+  background: linear-gradient(100deg, var(--color-clay-deep) 0%, var(--color-clay) 38%, var(--color-gold-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.text-gradient-light {
+  background: linear-gradient(100deg, #ffffff 0%, var(--color-gold-soft) 55%, var(--color-clay-soft) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ============================================================
+   Film grain overlay (inside a position:relative parent)
+   ============================================================ */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+}
+
+/* ============================================================
+   Utility animations (fallbacks; Framer/GSAP drive most)
+   ============================================================ */
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-rise {
+  animation: fadeRise 0.9s var(--ease-out-soft) both;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+.animate-floaty {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spinSlow 26s linear infinite;
+}
+
+/* Custom cursor: hide native pointer on fine-pointer devices */
+@media (pointer: fine) {
+  body.has-cursor,
+  body.has-cursor a,
+  body.has-cursor button,
+  body.has-cursor [role='button'] {
+    cursor: none;
+  }
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
