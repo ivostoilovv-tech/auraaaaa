@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Design — Създаваме дигитални светове</title>
+  <meta name="description" content="Aura Design е креативно студио за уеб дизайн. Създаваме уникални дигитални преживявания, които живеят и дишат.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600;7..72,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <span class="cursor-label"></span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="Основна навигация">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Aura Design начало">
+        <img src="Logo.png" alt="Aura Design" width="36" height="36">
+      </a>
+      <div class="nav-links">
+        <a href="#work">Работи</a>
+        <a href="#services">Услуги</a>
+        <a href="#process">Процес</a>
+        <a href="#about">За нас</a>
+        <a href="#contact">Контакт</a>
+      </div>
+      <a href="#contact" class="nav-cta">Започни проект →</a>
+      <button class="nav-menu-btn" aria-label="Меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="#work">Работи</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Процес</a>
+      <a href="#about">За нас</a>
+      <a href="#contact" class="mobile-menu-cta">Започни проект</a>
+    </div>
+  </div>
+
+  <!-- Section 1: Hero + Manifesto (Combined Scroll Sequence) -->
+  <section class="hero-sequence" id="home">
+    <!-- Pinned viewport — sticks while parent scrolls -->
+    <div class="hero-pinned">
+      <!-- Background fluid blobs -->
+      <div class="hero-fluid" aria-hidden="true">
+        <div class="fluid-blob blob-1"></div>
+        <div class="fluid-blob blob-2"></div>
+        <div class="fluid-blob blob-3"></div>
+        <div class="fluid-blob blob-4"></div>
+      </div>
+
+      <!-- Logo mark -->
+      <div class="hero-logo-mark" aria-hidden="true">
+        <img src="Logo.png" alt="" width="40" height="40">
+      </div>
+
+      <!-- Layout: text left, art right -->
+      <div class="hero-layout">
+        <!-- Left: text content that changes on scroll -->
+        <div class="hero-text-column">
+          <!-- State 0: Headline -->
+          <div class="hero-slide active" data-slide="0">
+            <h1 class="hero-headline">
+              <span class="word">Създаваме</span>
+              <span class="word">дигитални</span>
+              <span class="word">светове.</span>
+            </h1>
+            <p class="hero-studio">AURA DESIGN</p>
+          </div>
+          <!-- State 1 -->
+          <div class="hero-slide" data-slide="1">
+            <p class="hero-statement">Всеки пиксел е решение.</p>
+          </div>
+          <!-- State 2 -->
+          <div class="hero-slide" data-slide="2">
+            <p class="hero-statement">Всяко взаимодействие е емоция.</p>
+          </div>
+          <!-- State 3 -->
+          <div class="hero-slide" data-slide="3">
+            <p class="hero-statement">Всеки уебсайт е свят.</p>
+          </div>
+
+          <!-- Progress indicator -->
+          <div class="hero-progress" aria-hidden="true">
+            <span class="hero-progress-dot active"></span>
+            <span class="hero-progress-dot"></span>
+            <span class="hero-progress-dot"></span>
+            <span class="hero-progress-dot"></span>
+          </div>
+        </div>
+
+        <!-- Right: art composition that transforms on scroll -->
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-art-composition">
+            <div class="art-card art-card-1">
+              <div class="art-card-inner">
+                <div class="art-card-line"></div>
+                <div class="art-card-line short"></div>
+                <div class="art-card-circle"></div>
+              </div>
+            </div>
+            <div class="art-card art-card-2">
+              <div class="art-card-inner">
+                <div class="art-card-block"></div>
+                <div class="art-card-block small"></div>
+              </div>
+            </div>
+            <div class="art-card art-card-3">
+              <div class="art-card-inner">
+                <div class="art-card-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="art-card-bar"></div>
+                <div class="art-card-bar short"></div>
+              </div>
+            </div>
+            <div class="art-orbit">
+              <img src="Logo.png" alt="" width="48" height="48" class="art-star">
+            </div>
+            <div class="art-ring art-ring-1"></div>
+            <div class="art-ring art-ring-2"></div>
+            <div class="art-particle art-p1"></div>
+            <div class="art-particle art-p2"></div>
+            <div class="art-particle art-p3"></div>
+            <div class="art-particle art-p4"></div>
+            <div class="art-particle art-p5"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Portfolio -->
+  <section class="portfolio" id="work">
+    <div class="portfolio-inner">
+      <div class="portfolio-left">
+        <h2 class="section-label">Избрани работи</h2>
+        <div class="portfolio-list">
+          <div class="portfolio-item active" data-index="0" data-url="https://verdanawellness.com" data-screenshot="linear-gradient(180deg, #f5ebe0 0%, #d5bdaf 30%, #edede9 60%, #f5ebe0 100%)">
+            <span class="portfolio-item-num">01</span>
+            <div class="portfolio-item-info">
+              <span class="portfolio-item-tag">Уеб дизайн</span>
+              <h3>Verdana Wellness</h3>
+              <p>Платформа за холистично здраве и благополучие с персонализирани програми и онлайн консултации.</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-index="1" data-url="https://solarastudio.bg" data-screenshot="linear-gradient(180deg, #2d3436 0%, #636e72 25%, #dfe6e9 50%, #b2bec3 75%, #2d3436 100%)">
+            <span class="portfolio-item-num">02</span>
+            <div class="portfolio-item-info">
+              <span class="portfolio-item-tag">Бранд идентичност</span>
+              <h3>Solara Studio</h3>
+              <p>Креативно студио за интериорен дизайн с портфолио, което впечатлява от пръв поглед.</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-index="2" data-url="https://aterraceramics.com" data-screenshot="linear-gradient(180deg, #fefae0 0%, #dda15e 30%, #bc6c25 50%, #606c38 75%, #283618 100%)">
+            <span class="portfolio-item-num">03</span>
+            <div class="portfolio-item-info">
+              <span class="portfolio-item-tag">E-commerce</span>
+              <h3>Aterra Ceramics</h3>
+              <p>Ръчно изработена керамика с история — онлайн магазин с продажби на три континента.</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-index="3" data-url="https://lumafinance.io" data-screenshot="linear-gradient(180deg, #0d1b2a 0%, #1b263b 25%, #415a77 50%, #778da9 75%, #e0e1dd 100%)">
+            <span class="portfolio-item-num">04</span>
+            <div class="portfolio-item-info">
+              <span class="portfolio-item-tag">Уеб приложение</span>
+              <h3>Luma Finance</h3>
+              <p>Финтех платформа за осъзнати инвестиции с интуитивен интерфейс и реални данни.</p>
+            </div>
+          </div>
+          <div class="portfolio-item" data-index="4" data-url="https://novaarchitecture.bg" data-screenshot="linear-gradient(180deg, #f8f9fa 0%, #dee2e6 20%, #adb5bd 45%, #6c757d 70%, #343a40 100%)">
+            <span class="portfolio-item-num">05</span>
+            <div class="portfolio-item-info">
+              <span class="portfolio-item-tag">3D & Интерактивност</span>
+              <h3>Nova Architecture</h3>
+              <p>Архитектурно бюро с визия за бъдещето — 3D разходки и интерактивни планове.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-right">
+        <div class="portfolio-browser">
+          <div class="browser-chrome">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span class="browser-url-text">verdanawellness.com</span>
+            </div>
+          </div>
+          <div class="browser-viewport">
+            <div class="browser-scroll-content">
+              <!-- Simulated website content via gradient background -->
+            </div>
+            <div class="browser-scroll-hint">
+              <span>Скролнете за повече</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="portfolio-visit-btn" target="_blank" rel="noopener">
+          Виж сайта
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Capabilities -->
+  <section class="capabilities" id="services">
+    <div class="capabilities-inner">
+      <div class="capabilities-list">
+        <h2 class="section-label section-label--light">Какво правим</h2>
+        <div class="capability-item active" data-index="0">
+          <h3>Бранд Идентичност</h3>
+          <p>Изграждаме визуална идентичност, която разказва историята на вашия бранд и остава в съзнанието.</p>
+        </div>
+        <div class="capability-item" data-index="1">
+          <h3>Уеб Дизайн</h3>
+          <p>Проектираме уебсайтове, които са произведения на изкуството — всеки детайл е премислен и прецизен.</p>
+        </div>
+        <div class="capability-item" data-index="2">
+          <h3>Анимации и Движение</h3>
+          <p>Вдъхваме живот на интерфейсите чрез анимации, които разказват истории и предизвикват емоции.</p>
+        </div>
+        <div class="capability-item" data-index="3">
+          <h3>Разработка</h3>
+          <p>Превръщаме дизайна в код с прецизност и внимание към всеки пиксел. Бързо, достъпно, безупречно.</p>
+        </div>
+        <div class="capability-item" data-index="4">
+          <h3>3D и Интерактивност</h3>
+          <p>Създаваме потапящи 3D преживявания, които размиват границата между реалност и дигитален свят.</p>
+        </div>
+      </div>
+      <div class="capabilities-visual">
+        <div class="capability-visual-card">
+          <div class="capability-anim" data-anim="brand">
+            <div class="anim-brand">
+              <div class="brand-shape"></div>
+              <div class="brand-shape"></div>
+              <div class="brand-shape"></div>
+              <div class="brand-shape"></div>
+            </div>
+          </div>
+          <div class="capability-anim" data-anim="web">
+            <div class="anim-grid">
+              <div class="grid-block"></div>
+              <div class="grid-block"></div>
+              <div class="grid-block"></div>
+              <div class="grid-block"></div>
+              <div class="grid-block"></div>
+              <div class="grid-block"></div>
+            </div>
+          </div>
+          <div class="capability-anim" data-anim="motion">
+            <div class="anim-motion">
+              <span>Д</span><span>в</span><span>и</span><span>ж</span><span>е</span><span>н</span><span>и</span><span>е</span>
+            </div>
+          </div>
+          <div class="capability-anim" data-anim="dev">
+            <div class="anim-code">
+              <div class="code-line"><span class="code-tag">&lt;aura&gt;</span></div>
+              <div class="code-line indent"><span class="code-prop">create</span>: <span class="code-val">"magic"</span></div>
+              <div class="code-line"><span class="code-tag">&lt;/aura&gt;</span></div>
+            </div>
+          </div>
+          <div class="capability-anim" data-anim="3d">
+            <div class="anim-3d">
+              <div class="cube">
+                <div class="cube-face front"></div>
+                <div class="cube-face back"></div>
+                <div class="cube-face left"></div>
+                <div class="cube-face right"></div>
+                <div class="cube-face top"></div>
+                <div class="cube-face bottom"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Horizontal Scroll Strip -->
+  <section class="strip">
+    <div class="strip-track">
+      <span class="strip-word">Дизайнът не е как изглежда</span>
+      <span class="strip-separator">—</span>
+      <span class="strip-word">Дизайнът е как те кара да се чувстваш</span>
+      <span class="strip-separator">—</span>
+      <span class="strip-word">Ние не правим уебсайтове</span>
+      <span class="strip-separator">—</span>
+      <span class="strip-word">Ние създаваме преживявания които живеят и дишат</span>
+      <span class="strip-separator">—</span>
+    </div>
+  </section>
+
+  <!-- Section 6: Process -->
+  <section class="process" id="process">
+    <h2 class="section-label">Нашият процес</h2>
+    <div class="process-steps">
+      <div class="process-step" data-step="1">
+        <div class="process-step-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="54"/>
+            <circle class="ring-fill" cx="60" cy="60" r="54"/>
+          </svg>
+          <span class="process-step-num">01</span>
+        </div>
+        <div class="process-step-content">
+          <h3>Откриване</h3>
+          <p>Потапяме се във вашия свят. Разбираме целите, аудиторията и визията, за да изградим солидна основа за проекта.</p>
+        </div>
+      </div>
+      <div class="process-step" data-step="2">
+        <div class="process-step-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="54"/>
+            <circle class="ring-fill" cx="60" cy="60" r="54"/>
+          </svg>
+          <span class="process-step-num">02</span>
+        </div>
+        <div class="process-step-content">
+          <h3>Дизайн</h3>
+          <p>Превръщаме идеите в визуални решения. Всяка композиция, цвят и типография са внимателно подбрани.</p>
+        </div>
+      </div>
+      <div class="process-step" data-step="3">
+        <div class="process-step-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="54"/>
+            <circle class="ring-fill" cx="60" cy="60" r="54"/>
+          </svg>
+          <span class="process-step-num">03</span>
+        </div>
+        <div class="process-step-content">
+          <h3>Изграждане</h3>
+          <p>Пишем чист, бърз и достъпен код. Всеки пиксел от дизайна оживява с прецизност и внимание.</p>
+        </div>
+      </div>
+      <div class="process-step" data-step="4">
+        <div class="process-step-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="54"/>
+            <circle class="ring-fill" cx="60" cy="60" r="54"/>
+          </svg>
+          <span class="process-step-num">04</span>
+        </div>
+        <div class="process-step-content">
+          <h3>Стартиране</h3>
+          <p>Лансираме проекта в света. Тестваме, оптимизираме и гарантираме, че всичко работи безупречно.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Metrics -->
+  <section class="metrics">
+    <div class="metrics-grid">
+      <div class="metric" data-target="150">
+        <span class="metric-num">0</span>
+        <span class="metric-plus">+</span>
+        <span class="metric-label">завършени проекти</span>
+      </div>
+      <div class="metric" data-target="12">
+        <span class="metric-num">0</span>
+        <span class="metric-plus"></span>
+        <span class="metric-label">награди</span>
+      </div>
+      <div class="metric" data-target="6">
+        <span class="metric-num">0</span>
+        <span class="metric-plus">+</span>
+        <span class="metric-label">години опит</span>
+      </div>
+      <div class="metric" data-target="98">
+        <span class="metric-num">0</span>
+        <span class="metric-plus">%</span>
+        <span class="metric-label">доволни клиенти</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Testimonials -->
+  <section class="testimonials">
+    <div class="testimonial active" data-bg="terracotta">
+      <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+      <blockquote>
+        <p>Aura Design не просто създадоха уебсайт — те създадоха преживяване. Клиентите ни казват, че сайтът е първото нещо, което ги е впечатлило.</p>
+      </blockquote>
+      <cite>
+        <strong>Мария Иванова</strong>
+        <span>CEO, Verdana Wellness</span>
+      </cite>
+    </div>
+    <div class="testimonial" data-bg="sage">
+      <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+      <blockquote>
+        <p>Работата с Aura беше като магия. Разбраха визията ни от първата среща и я превърнаха в нещо далеч по-красиво от каквото си представяхме.</p>
+      </blockquote>
+      <cite>
+        <strong>Александър Петров</strong>
+        <span>Основател, Solara Studio</span>
+      </cite>
+    </div>
+    <div class="testimonial" data-bg="gold">
+      <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+      <blockquote>
+        <p>Продажбите ни се увеличиха с 40% след новия сайт. Но по-важното е, че клиентите ни се чувстват у дома, когато го разглеждат.</p>
+      </blockquote>
+      <cite>
+        <strong>Елена Димитрова</strong>
+        <span>Основател, Aterra Ceramics</span>
+      </cite>
+    </div>
+    <div class="testimonial-nav" aria-label="Навигация на отзиви">
+      <button class="testimonial-prev" aria-label="Предишен отзив">←</button>
+      <div class="testimonial-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <button class="testimonial-next" aria-label="Следващ отзив">→</button>
+    </div>
+  </section>
+
+  <!-- Section 9: About Teaser -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-image">
+        <div class="about-image-placeholder">
+          <div class="about-image-grain"></div>
+          <img src="Logo.png" alt="Aura Design студио" class="about-logo-display">
+        </div>
+      </div>
+      <div class="about-text">
+        <h2>Ние сме Aura Design.</h2>
+        <p>Студио от креативни умове, които вярват, че уебът може да бъде красив. Не правим шаблонни сайтове — създаваме дигитални пространства, в които хората искат да останат. Всеки проект е ново пътешествие, всеки пиксел е с намерение.</p>
+        <a href="#" class="about-link">За студиото →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Final CTA -->
+  <section class="cta" id="contact">
+    <div class="cta-fluid" aria-hidden="true">
+      <div class="fluid-blob blob-cta-1"></div>
+      <div class="fluid-blob blob-cta-2"></div>
+    </div>
+    <div class="cta-content">
+      <h2>Готови ли сте да създадем<br>нещо необикновено?</h2>
+      <a href="mailto:hello@auradesign.bg" class="cta-link">Нека поговорим</a>
+      <div class="cta-contact">
+        <span>hello@auradesign.bg</span>
+      </div>
+    </div>
+    <div class="cta-star" aria-hidden="true">
+      <img src="Logo.png" alt="" width="64" height="64">
+    </div>
+  </section>
+
+  <!-- Section 11: Footer -->
+  <footer class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="Logo.png" alt="Aura Design" width="28" height="28">
+        <span>Aura Design</span>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Услуги</h4>
+          <a href="#">Уеб дизайн</a>
+          <a href="#">Разработка</a>
+          <a href="#">Бранд идентичност</a>
+          <a href="#">3D и анимации</a>
+        </div>
+        <div class="footer-col">
+          <h4>Компания</h4>
+          <a href="#">За нас</a>
+          <a href="#">Работи</a>
+          <a href="#">Процес</a>
+          <a href="#">Кариери</a>
+        </div>
+        <div class="footer-col">
+          <h4>Контакт</h4>
+          <a href="#">hello@auradesign.bg</a>
+          <a href="#">Instagram</a>
+          <a href="#">Behance</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Aura Design. Всички права запазени.</span>
+      <a href="#home" class="back-to-top">Нагоре ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
