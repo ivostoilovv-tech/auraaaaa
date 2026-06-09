@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <div className="max-w-xs">
             <div className="flex items-center gap-2">
-              <img src="/logo.png" className="h-7 w-7" alt="" />
+              <img src="logo.png" className="h-7 w-7" alt="" />
               <span className="font-display text-xl text-cream">Aura Design</span>
             </div>
             <p className="mt-4 text-sm text-cream/55">{t.footer.tagline}</p>

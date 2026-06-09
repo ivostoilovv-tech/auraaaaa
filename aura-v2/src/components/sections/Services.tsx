@@ -244,14 +244,14 @@ export function Services() {
 
           <div className="my-8 flex items-center gap-3">
             <span className="h-px w-12 bg-coal/25" />
-            <img src="/logo.png" alt="" className="h-4 w-4 opacity-80" />
+            <img src="logo.png" alt="" className="h-4 w-4 opacity-80" />
             <span className="h-px flex-1 bg-coal/15" />
           </div>
 
           <p className="max-w-md text-lg leading-relaxed text-text-soft">{s.lead}</p>
 
           <div className="mt-10 flex items-start gap-3">
-            <img src="/logo.png" alt="" className="mt-0.5 h-4 w-4 opacity-70" />
+            <img src="logo.png" alt="" className="mt-0.5 h-4 w-4 opacity-70" />
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-clay">
                 {s.builtKicker}

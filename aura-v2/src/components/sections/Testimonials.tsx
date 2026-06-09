@@ -1,79 +1,95 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight, Quote } from 'lucide-react'
 import { useLang } from '../../i18n/LanguageContext'
+import { LiquidCanvas } from '../primitives/LiquidCanvas'
+import { useIsDesktop } from '../../lib/useIsDesktop'
 
-const TINTS = ['#fbeae4', '#eef2ef', '#fbf3dd']
+const EASE = [0.22, 1, 0.36, 1] as const
 
+/**
+ * A small editorial quote floating over soft marble — intentionally lighter
+ * than a classic "reviews" section: one voice at a time, lots of air.
+ */
 export function Testimonials() {
   const { t } = useLang()
+  const isDesktop = useIsDesktop()
   const items = t.testimonials.items
   const [i, setI] = useState(0)
 
-  const next = () => setI((p) => (p + 1) % items.length)
-  const prev = () => setI((p) => (p - 1 + items.length) % items.length)
-
   useEffect(() => {
-    const id = setInterval(() => setI((p) => (p + 1) % items.length), 6000)
+    const id = setInterval(() => setI((p) => (p + 1) % items.length), 7000)
     return () => clearInterval(id)
   }, [items.length])
 
   return (
-    <section
-      className="relative overflow-hidden py-24 transition-colors duration-700 sm:py-32"
-      style={{ backgroundColor: TINTS[i] }}
-    >
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <p className="mb-8 text-xs font-semibold uppercase tracking-[0.22em] text-clay">
-          {t.testimonials.kicker}
-        </p>
-        <Quote className="mx-auto mb-6 text-clay/40" size={44} />
-        <div className="relative min-h-[230px] sm:min-h-[200px]">
+    <section id="testimonials" className="relative overflow-hidden py-24 sm:py-28">
+      {/* Marble band — fades to cream at both edges so the page stays one canvas */}
+      <div className="absolute inset-0">
+        <img
+          src="assets/quote-marble.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none'
+          }}
+        />
+        {isDesktop ? (
+          <LiquidCanvas
+            src="assets/quote-marble.jpg"
+            flow={0.45}
+            intensity={0.7}
+            className="absolute inset-0 h-full w-full"
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-cream/40" />
+        <div className="absolute inset-x-0 top-0 h-[26%] bg-gradient-to-b from-cream to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[26%] bg-gradient-to-t from-cream to-transparent" />
+      </div>
+
+      <div className="relative mx-auto max-w-2xl px-6 text-center">
+        <motion.span
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="font-display text-6xl leading-none text-clay/70"
+          aria-hidden="true"
+        >
+          “
+        </motion.span>
+
+        <div className="relative mt-2 min-h-[170px] sm:min-h-[150px]">
           <AnimatePresence mode="wait">
             <motion.blockquote
               key={i}
-              initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+              initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={{ opacity: 0, y: -24, filter: 'blur(8px)' }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              exit={{ opacity: 0, y: -18, filter: 'blur(6px)' }}
+              transition={{ duration: 0.6, ease: EASE }}
             >
-              <p className="font-display text-[clamp(1.35rem,3.2vw,2.4rem)] font-medium leading-snug text-text">
-                “{items[i].quote}”
+              <p className="font-display text-[clamp(1.3rem,2.6vw,1.9rem)] font-medium italic leading-snug text-ink">
+                {items[i].quote}
               </p>
-              <footer className="mt-8">
-                <div className="font-semibold text-text">{items[i].name}</div>
-                <div className="text-sm text-text-mute">{items[i].role}</div>
+              <footer className="mt-7">
+                <span className="mx-auto mb-4 block h-px w-10 bg-clay/50" />
+                <div className="text-sm font-semibold text-ink">{items[i].name}</div>
+                <div className="mt-0.5 text-xs text-text-mute">{items[i].role}</div>
               </footer>
             </motion.blockquote>
           </AnimatePresence>
         </div>
-        <div className="mt-10 flex items-center justify-center gap-4">
-          <button
-            onClick={prev}
-            aria-label="Previous"
-            className="grid h-11 w-11 place-items-center rounded-full border border-coal/15 text-coal transition-colors hover:border-clay hover:text-clay"
-          >
-            <ArrowLeft size={18} />
-          </button>
-          <div className="flex gap-2">
-            {items.map((_, d) => (
-              <button
-                key={d}
-                onClick={() => setI(d)}
-                aria-label={`Go to testimonial ${d + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  d === i ? 'w-6 bg-clay' : 'w-2 bg-coal/20'
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={next}
-            aria-label="Next"
-            className="grid h-11 w-11 place-items-center rounded-full border border-coal/15 text-coal transition-colors hover:border-clay hover:text-clay"
-          >
-            <ArrowRight size={18} />
-          </button>
+
+        <div className="mt-8 flex justify-center gap-2">
+          {items.map((_, d) => (
+            <button
+              key={d}
+              onClick={() => setI(d)}
+              aria-label={`Quote ${d + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                d === i ? 'w-6 bg-clay' : 'w-1.5 bg-coal/25 hover:bg-coal/40'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

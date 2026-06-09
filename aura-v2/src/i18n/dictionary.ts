@@ -120,54 +120,53 @@ const bg = {
   ],
   process: {
     kicker: 'Нашият процес',
-    heading: 'От идея до\nстартиране.',
+    headingTop: 'От идея до',
+    headingAccent: 'стартиране.',
+    sub: 'Превръщаме първоначалната визия в ясен, красив и готов за употреба дигитален продукт.',
     steps: [
       {
         title: 'Откриване',
-        desc: 'Потапяме се във вашия свят. Разбираме целите, аудиторията и визията, за да изградим солидна основа.',
+        desc: 'Разбираме целта, аудиторията и усещането, което проектът трябва да носи.',
+        keywords: ['Цели', 'Аудитория', 'Усещане'],
       },
       {
-        title: 'Дизайн',
-        desc: 'Превръщаме идеите във визуални решения. Всяка композиция, цвят и типография са внимателно подбрани.',
+        title: 'Посока',
+        desc: 'Подреждаме структурата, съдържанието и визуалната логика.',
+        keywords: ['Структура', 'Съдържание', 'Визуална логика'],
       },
       {
         title: 'Изграждане',
-        desc: 'Пишем чист, бърз и достъпен код. Всеки пиксел от дизайна оживява с прецизност и внимание.',
+        desc: 'Създаваме дизайн, движение и функционалност с внимание към детайла.',
+        keywords: ['Дизайн', 'Интеракции', 'Разработка'],
       },
       {
         title: 'Стартиране',
-        desc: 'Лансираме проекта в света. Тестваме, оптимизираме и гарантираме, че всичко работи безупречно.',
+        desc: 'Тестваме, полираме и подготвяме сайта за реална употреба.',
+        keywords: ['Тестове', 'Полиране', 'Публикуване'],
       },
     ],
-  },
-  metrics: {
-    items: [
-      { value: 150, suffix: '+', label: 'завършени проекти' },
-      { value: 12, suffix: '', label: 'спечелени награди' },
-      { value: 6, suffix: '+', label: 'години опит' },
-      { value: 98, suffix: '%', label: 'доволни клиенти' },
-    ],
+    principles: ['Посока', 'Детайл', 'Движение', 'Старт'],
   },
   testimonials: {
     kicker: 'Отзиви',
     items: [
       {
         quote:
-          'Aura Design не просто създадоха уебсайт — те създадоха преживяване. Клиентите ни казват, че сайтът е първото нещо, което ги впечатлява.',
+          'Процесът беше ясен и спокоен от първата среща. Получихме сайт, който не просто изглежда добре — носи усещането на бранда ни.',
+        name: 'Елена Димитрова',
+        role: 'Основател, Aterra Ceramics',
+      },
+      {
+        quote:
+          'Сайтът най-накрая се усеща като нас — спокоен, ясен и запомнящ се.',
         name: 'Мария Иванова',
         role: 'CEO, Verdana Wellness',
       },
       {
         quote:
-          'Работата с Aura беше като магия. Разбраха визията ни от първата среща и я превърнаха в нещо далеч по-красиво, отколкото си представяхме.',
+          'Всеки детайл е обмислен — от типографията до най-малкото движение. Личи внимание на всяко ниво.',
         name: 'Александър Петров',
         role: 'Основател, Solara Studio',
-      },
-      {
-        quote:
-          'Продажбите ни се увеличиха с 40% след новия сайт. Но по-важното — клиентите ни се чувстват у дома, когато го разглеждат.',
-        name: 'Елена Димитрова',
-        role: 'Основател, Aterra Ceramics',
       },
     ],
   },
@@ -323,54 +322,53 @@ const en: Copy = {
   ],
   process: {
     kicker: 'Our process',
-    heading: 'From idea to\nlaunch.',
+    headingTop: 'From idea to',
+    headingAccent: 'launch.',
+    sub: 'We turn the first vision into a clear, beautiful, ready-to-use digital product.',
     steps: [
       {
         title: 'Discovery',
-        desc: 'We immerse ourselves in your world. We grasp the goals, audience and vision to build a solid foundation.',
+        desc: 'We understand the goal, the audience and the feeling the project should carry.',
+        keywords: ['Goals', 'Audience', 'Feeling'],
       },
       {
-        title: 'Design',
-        desc: 'We turn ideas into visual solutions. Every composition, color and typeface is carefully chosen.',
+        title: 'Direction',
+        desc: 'We shape the structure, the content and the visual logic.',
+        keywords: ['Structure', 'Content', 'Visual logic'],
       },
       {
         title: 'Build',
-        desc: 'We write clean, fast and accessible code. Every pixel of the design comes alive with care.',
+        desc: 'We craft the design, motion and functionality with care for every detail.',
+        keywords: ['Design', 'Interactions', 'Development'],
       },
       {
         title: 'Launch',
-        desc: 'We release the project into the world. We test, optimize and make sure everything works flawlessly.',
+        desc: 'We test, polish and prepare the site for real use.',
+        keywords: ['Testing', 'Polishing', 'Release'],
       },
     ],
-  },
-  metrics: {
-    items: [
-      { value: 150, suffix: '+', label: 'projects delivered' },
-      { value: 12, suffix: '', label: 'awards won' },
-      { value: 6, suffix: '+', label: 'years of craft' },
-      { value: 98, suffix: '%', label: 'client satisfaction' },
-    ],
+    principles: ['Direction', 'Detail', 'Motion', 'Launch'],
   },
   testimonials: {
     kicker: 'Testimonials',
     items: [
       {
         quote:
-          'Aura Design didn’t just build a website — they built an experience. Our clients say the site is the first thing that impresses them.',
+          'The process was clear and calm from the very first meeting. We got a site that doesn’t just look good — it carries the feeling of our brand.',
+        name: 'Elena Dimitrova',
+        role: 'Founder, Aterra Ceramics',
+      },
+      {
+        quote:
+          'The site finally feels like us — calm, clear and memorable.',
         name: 'Maria Ivanova',
         role: 'CEO, Verdana Wellness',
       },
       {
         quote:
-          'Working with Aura was pure magic. They understood our vision from the first meeting and turned it into something far more beautiful than we imagined.',
+          'Every detail is considered — from the typography down to the smallest motion. Care shows at every level.',
         name: 'Alexander Petrov',
         role: 'Founder, Solara Studio',
-      },
-      {
-        quote:
-          'Our sales grew 40% after the new site. But more importantly — our customers feel at home browsing it.',
-        name: 'Elena Dimitrova',
-        role: 'Founder, Aterra Ceramics',
       },
     ],
   },

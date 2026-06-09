@@ -20,7 +20,7 @@ export function Nav() {
         <nav className="glass mx-auto flex max-w-6xl items-center justify-between rounded-full py-2 pl-3 pr-2 sm:pl-5 sm:pr-3">
           <a href="#home" onClick={go('home')} className="flex items-center gap-2">
             <img
-              src="/logo.png"
+              src="logo.png"
               width={26}
               height={26}
               alt="Aura Design"

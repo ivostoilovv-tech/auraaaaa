@@ -1,4 +1,5 @@
-import { useLenis } from './lib/useLenis'
+import { useEffect } from 'react'
+import { useLenis, lenisScrollTo } from './lib/useLenis'
 import { Cursor } from './components/Cursor'
 import { ScrollProgress } from './components/ScrollProgress'
 import { Nav } from './components/Nav'
@@ -8,7 +9,6 @@ import { Work } from './components/sections/Work'
 import { Showreel } from './components/sections/Showreel'
 import { Marquee } from './components/sections/Marquee'
 import { Process } from './components/sections/Process'
-import { Metrics } from './components/sections/Metrics'
 import { Testimonials } from './components/sections/Testimonials'
 import { About } from './components/sections/About'
 import { CTA } from './components/sections/CTA'
@@ -16,6 +16,15 @@ import { Footer } from './components/sections/Footer'
 
 function App() {
   useLenis()
+
+  // Deep-link support: /?jump=process scrolls to a section after load
+  // (plain #hash is reset by Lenis's initial scroll-to-top).
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get('jump')
+    if (!id) return
+    const t = setTimeout(() => lenisScrollTo(`#${id}`), 800)
+    return () => clearTimeout(t)
+  }, [])
 
   return (
     <>
@@ -29,7 +38,6 @@ function App() {
         <Showreel />
         <Marquee />
         <Process />
-        <Metrics />
         <Testimonials />
         <About />
         <CTA />
